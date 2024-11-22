@@ -1,6 +1,6 @@
 {
-  "name": "<TODO>",
-  "version": "<TODO>",
+  "name": "@seroh/npm-typescript-module",
+  "version": "0.0.0-development",
   "author": "<TODO>",
   "license": "<TODO>",
   "description": "<TODO>",
@@ -8,6 +8,10 @@
     "<TODO>"
   ],
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "readme.md"
+  ],
   "scripts": {
     "start": "npm run build",
     "build": "tsc --watch",
@@ -21,6 +25,7 @@
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
     "prettier": "^3.3.3",
+    "semantic-release": "^24.2.0",
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.3"
   }
