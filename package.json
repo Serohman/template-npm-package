@@ -19,6 +19,7 @@
     "start": "npm run build",
     "build": "tsc --watch",
     "test": "jest --watch",
+    "format": "npx prettier --write ./src",
     "build:ci": "tsc --build",
     "test:ci": "jest --ci --coverage"
   },
