@@ -1,12 +1,16 @@
 {
   "include": ["src/index.ts"],
   "exclude": ["node_modules", "src/**/*.test.ts"],
-
   "compilerOptions": {
     //
     // Base Options
     //
 
+    "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "esModuleInterop": true, // Normalize CommonJS and ES modules behaviour
     "skipLibCheck": true, // Skip type checking in node_modules to boos performance
     "allowJs": true,
@@ -35,13 +39,14 @@
     // Transpiling
     //
 
-    "rootDir": "src",
     "target": "ESNext", // The version of JavaScript you're targeting.
     "module": "ESNext",
     "moduleResolution": "node",
     "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./.temp/tsconfig.tsbuildinfo"
   }
 }
