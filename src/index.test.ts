@@ -1,4 +1,4 @@
-import { greet } from "./index";
+import {greet} from "./index";
 
 describe("greet", () => {
   test("should return correct message", () => {
