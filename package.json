@@ -12,6 +12,9 @@
     "dist",
     "readme.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "npm run build",
     "build": "tsc --watch",
