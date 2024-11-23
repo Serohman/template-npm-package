@@ -16,14 +16,21 @@
     "access": "public"
   },
   "scripts": {
+    "prepare": "husky",
     "start": "npm run build",
     "build": "tsc --watch",
     "test": "jest --watch",
     "lint": "npx eslint ./src",
     "format": "npx prettier --write ./src",
-    "build:ci": "tsc --build",
-    "lint:ci": "npx eslint ./src --config eslint.config.ci.mjs",
-    "test:ci": "jest --ci --coverage"
+    "precommit": "lint-staged",
+    "precommit:format": "prettier --ignore-unknown --write",
+    "precommit:lint": "eslint --fix",
+    "precommit:test": "jest --bail --findRelatedTests",
+    "precommit:typecheck": "tsc --noEmit",
+    "precommit:audit": "npm audit",
+    "ci:build": "tsc --build",
+    "ci:lint": "npx eslint ./src --config eslint.config.ci.mjs",
+    "ci:test": "jest --config jest.config.js --bail --findRelatedTests"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -31,7 +38,9 @@
     "@tsconfig/recommended": "^1.0.8",
     "@types/jest": "^29.5.14",
     "eslint": "^9.15.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "semantic-release": "^24.2.0",
     "ts-jest": "^29.2.5",
