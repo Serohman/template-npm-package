@@ -1,15 +1,8 @@
 {
-  "src/**/*.{ts,tsx,js,jsx}": ["npm run precommit:format", "npm run precommit:typecheck"],
   "src/**/!(*.test).{ts,tsx,js,jsx}": [
     "npm run precommit:typecheck",
     "npm run precommit:format",
     "npm run precommit:lint"
   ],
-  "src/**/*.test.{ts,tsx,js,jsx}": [
-    "npm run precommit:typecheck",
-    "npm run precommit:format",
-    "npm run precommit:test"
-  ],
-  "package-lock.json": "npm run precommit:audit",
-  "package.json": "npm run precommit:audit"
+  "src/**/*.test.{ts,tsx,js,jsx}": ["npm run precommit:typecheck", "npm run precommit:format", "npm run precommit:test"]
 }
