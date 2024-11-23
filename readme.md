@@ -8,3 +8,13 @@
 ## Jest
 
 ## Prettify
+
+## Linter
+
+### Why?
+
+```TS
+// This
+let myObject: Object = 'foo'; // Allowed
+let myAnotherObject: {} = 0; // Allowed
+```
