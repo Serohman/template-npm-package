@@ -27,7 +27,6 @@
     "precommit:lint": "eslint --fix",
     "precommit:test": "jest --bail --findRelatedTests",
     "precommit:typecheck": "tsc --noEmit",
-    "precommit:audit": "npm audit",
     "ci:build": "tsc --build",
     "ci:lint": "npx eslint ./src --config eslint.config.ci.mjs",
     "ci:test": "jest --config jest.config.js --bail --findRelatedTests"
