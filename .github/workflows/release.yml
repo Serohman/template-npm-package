@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: "lts/*"
       - run: npm ci
+      - run: npm run ci:format
+      - run: npm run ci:lint
+      - run: npm run ci:test
       - run: npm run ci:build
       - run: npm audit signatures
       - name: release
