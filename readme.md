@@ -42,7 +42,7 @@ You need to generate an [NPM access token](https://docs.npmjs.com/about-access-t
 Use GitHub CLI
 
 ```bash
-# A prompt for entering the npm token will appear
+# A prompt for entering the npm token will appear after the command
 gh secret set NPM_TOKEN
 ```
 Or set the secret via the web UI by navigating to your repository's GitHub page, and then: `Settings > Secrets and variables > Actions > New repository secret`.
