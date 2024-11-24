@@ -15,14 +15,12 @@ This is a [template repository](https://docs.github.com/en/repositories/creating
 ## Table of Content
 
 - [Quick Start](#quick-start)
-- [Tools](#tools)
-  - [Typescript](#typescript)
-  - [Jest](#jest)
-  - [ESLint](#eslint)
-  - [Prettier](#prettier)
-  - [Github Actions](#github-actions)
-  - [Husky](#husky)
-  - [Semantic Release](#semantic-release)
+  - [Clone the template](#1-clone-the-template)
+  - [Set Up NPM Authentication](#2-set-up-npm-authentication)
+  - [Install dependencies](#3-instal-dependencies)
+  - [Set package metadata](#4-set-package-metadata)
+  - [Publish your package](#5-publish-your-package)
+- [Available NPM Scripts](#available-npm-scripts)
 
 ## Quick Start
 
@@ -54,7 +52,7 @@ Or set the secret via the web UI by navigating to your repository's GitHub page,
 npm install
 ```
 
-#### 4. Update `package.json` fields
+#### 4. Set package metadata
 Open `package.json` and fill out all the relevant fields:
 - `name`
 - `author`
@@ -76,18 +74,32 @@ git push --set-upstream origin release
 
 And voilà!🎉 The moment new changes hit the release branch, GitHub Actions will pick them up and publish a new release on NPM.
 
-## Tools
+## Available NPM Scripts
 
-### Typescript
+#### General
+These commands are used during the development process to build, test, lint, and format the code.
 
-### Jest
+- `start`: Runs the `build` script.
+- `build`: Compiles the TypeScript code and watches for changes.
+- `test`: Runs Jest in watch mode.
+- `lint`: Runs ESLint on the `./src` directory.
+- `format`: Formats the code in the `./src` directory using Prettier.
 
-### ESLint
+#### Precommit Hooks
+These commands are executed before a commit is made to ensure code quality and consistency. They check for issues in the staged files, attempt to fix them automatically (using the --fix flag), and display an error if the issues cannot be fixed. If any problems remain unresolved, the commit is prevented.
 
-### Prettier
+- `precommit`: Runs lint-staged to check staged files.
+- `precommit:format`: Formats staged files using Prettier.
+- `precommit:lint`: Fixes linting issues in staged files using ESLint.
+- `precommit:test`: Runs Jest on related tests for staged files.
+- `precommit:typecheck`: Type checks the code without emitting output.
 
-### Github Actions
+#### Continuous Integration
+These commands are executed by GitHub Actions on the `release` branch. Each time a change is pushed to the `release` branch, these actions are triggered. If any action fails, the release process is halted until the issues are resolved.
 
-### Husky
+- `ci:lint`: Runs ESLint with a CI-specific configuration.
+- `ci:test`: Runs Jest with a CI-specific configuration.
+- `ci:build`: Builds the TypeScript project.
+- `ci:format`: Checks code formatting using Prettier.
 
-### Semantic Release
+---
