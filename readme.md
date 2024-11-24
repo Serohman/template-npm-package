@@ -1,6 +1,6 @@
-# Template: Typescript NPM Module
+# Template: NPM Package
 
-This is a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) which you can use to quickly bootstrap your own NPM module.
+This is a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) which you can use to quickly bootstrap your own NPM package.
 
 ## Features
 
@@ -10,7 +10,7 @@ This is a [template repository](https://docs.github.com/en/repositories/creating
 - **Auto-Formatting**: Ensures consistent code style with automated formatting using [Prettier](https://prettier.io/)
 - **Continuous Integration (CI)**: Pre-configured [Github Actions](https://docs.github.com/en/actions) for linting, testing, building, and formatting in CI environments
 - **Git Hooks**: [Husky](https://typicode.github.io/husky/)-managed Git hooks to run scripts before commits, pushes, and other Git actions, ensuring code quality
-- **Semantic Release**: Automates versioning and package publishing via [Semantic Release](https://semantic-release.gitbook.io/semantic-release)
+- **Automated Release**: Automates versioning and package publishing via [Semantic Release](https://semantic-release.gitbook.io/semantic-release)
 
 ## Table of Content
 
@@ -35,27 +35,33 @@ The fastest way is to use Github CLI:
 gh repo create new-repo-name --template serohman/npm-typescript-module
 gh repo clone new-repo-name
 ```
-
-Or go thorugh [the official guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) on creating templates.
+Or refer to the [official guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)  for creating repositories from a template.
 
 #### 2. Set Up NPM Authentication
 
 You need to generate an [NPM access token](https://docs.npmjs.com/about-access-tokens) and save it as a [Github Action Secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions), under the key name `NPM_TOKEN`
 
-```bash
-gh secret set NPM_TOKEN
-# A prompt for entering the token will appear
-```
+Use Github CLI
 
+```bash
+# A prompt for entering the npm token will appear after the command
+gh secret set NPM_TOKEN
+```
+Or set the secret via the web UI by navigating to your repository's GitHub page, and then: `Settings > Secrets and variables > Actions > New repository secret`.
 #### 3. Instal dependencies
 
 ```bash
 npm install
 ```
 
-#### 4. Update `package.json`
-
-Open `package.json` and replace all occurrences of `<TODO>` with the relevant information.
+#### 4. Update `package.json` fields
+Open `package.json` and fill out all the relevant fields:
+- `name`
+- `author`
+- `description`
+- `tags`
+- `license`
+- `publishConfig.access` (Set to `private` to make your package private)
 
 #### 5. Publish your package
 
@@ -68,9 +74,9 @@ git commit -m "feat: Setup package"
 git push --set-upstream origin release
 ```
 
-### Development
+And voilà!🎉 The moment new changes hit the release branch, GitHub Actions will pick them up and publish a new release on NPM.
 
-## Tools & Configurations
+## Tools
 
 ### Typescript
 
