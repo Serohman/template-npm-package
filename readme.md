@@ -8,16 +8,16 @@ This is a [template repository](https://docs.github.com/en/repositories/creating
 - **Testing**: Pre-configured [Jest](https://jestjs.io/) setup for writing and running unit tests efficiently
 - **Linting**: Leverages [ESLint](https://eslint.org/) to catch potential bugs and enforce coding standards
 - **Auto-Formatting**: Ensures consistent code style with automated formatting using [Prettier](https://prettier.io/)
-- **Continuous Integration (CI)**: Pre-configured [Github Actions](https://docs.github.com/en/actions) for linting, testing, building, and formatting in CI environments
+- **Continuous Integration (CI)**: Pre-configured [GitHub Actions](https://docs.github.com/en/actions) for linting, testing, building, and formatting in CI environments
 - **Git Hooks**: [Husky](https://typicode.github.io/husky/)-managed Git hooks to run scripts before commits, pushes, and other Git actions, ensuring code quality
-- **Automated Release**: Automates versioning and package publishing via [Semantic Release](https://semantic-release.gitbook.io/semantic-release)
+- **Automated Publishing**: Uses [Semantic Release](https://semantic-release.gitbook.io/semantic-release) to automate package versioning and publishing.
 
 ## Table of Content
 
 - [Quick Start](#quick-start)
   - [Clone the template](#1-clone-the-template)
   - [Set Up NPM Authentication](#2-set-up-npm-authentication)
-  - [Install dependencies](#3-instal-dependencies)
+  - [Install dependencies](#3-install-dependencies)
   - [Set package metadata](#4-set-package-metadata)
   - [Publish your package](#5-publish-your-package)
 - [Available NPM Scripts](#available-npm-scripts)
@@ -26,7 +26,7 @@ This is a [template repository](https://docs.github.com/en/repositories/creating
 
 #### 1. Clone the template
 
-The fastest way is to use Github CLI:
+The fastest way is to use GitHub CLI:
 
 ```bash
 # Create a new repository using a template and clone it
@@ -35,18 +35,18 @@ gh repo clone new-repo-name
 ```
 Or refer to the [official guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)  for creating repositories from a template.
 
-#### 2. Set Up NPM Authentication
+#### 2. Set up NPM authentication
 
-You need to generate an [NPM access token](https://docs.npmjs.com/about-access-tokens) and save it as a [Github Action Secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions), under the key name `NPM_TOKEN`
+You need to generate an [NPM access token](https://docs.npmjs.com/about-access-tokens) and save it as a [GitHub Action Secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions), under the key name `NPM_TOKEN`
 
-Use Github CLI
+Use GitHub CLI
 
 ```bash
-# A prompt for entering the npm token will appear after the command
+# A prompt for entering the npm token will appear
 gh secret set NPM_TOKEN
 ```
 Or set the secret via the web UI by navigating to your repository's GitHub page, and then: `Settings > Secrets and variables > Actions > New repository secret`.
-#### 3. Instal dependencies
+#### 3. Install dependencies
 
 ```bash
 npm install
