@@ -12,7 +12,7 @@ This is a [template repository](https://docs.github.com/en/repositories/creating
 - **Git Hooks**: [Husky](https://typicode.github.io/husky/)-managed Git hooks to run scripts before commits, pushes, and other Git actions, ensuring code quality
 - **Automated Publishing**: Uses [Semantic Release](https://semantic-release.gitbook.io/semantic-release) to automate package versioning and publishing.
 
-## Table of Content
+## Table of Contents
 
 - [Quick Start](#quick-start)
   - [Clone the template](#1-clone-the-template)
@@ -33,7 +33,8 @@ The fastest way is to use GitHub CLI:
 gh repo create new-repo-name --template serohman/npm-typescript-module
 gh repo clone new-repo-name
 ```
-Or refer to the [official guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)  for creating repositories from a template.
+
+Or refer to the [official guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) for creating repositories from a template.
 
 #### 2. Set up NPM authentication
 
@@ -45,7 +46,9 @@ Use GitHub CLI
 # A prompt for entering the npm token will appear
 gh secret set NPM_TOKEN
 ```
+
 Or set the secret via the web UI by navigating to your repository's GitHub page, and then: `Settings > Secrets and variables > Actions > New repository secret`.
+
 #### 3. Install dependencies
 
 ```bash
@@ -53,7 +56,9 @@ npm install
 ```
 
 #### 4. Set package metadata
+
 Open `package.json` and fill out all the relevant fields:
+
 - `name`
 - `author`
 - `description`
@@ -77,6 +82,7 @@ And voilà!🎉 The moment new changes hit the release branch, GitHub Actions wi
 ## Available NPM Scripts
 
 #### General
+
 These commands are used during the development process to build, test, lint, and format the code.
 
 - `start`: Runs the `build` script.
@@ -86,6 +92,7 @@ These commands are used during the development process to build, test, lint, and
 - `format`: Formats the code in the `./src` directory using Prettier.
 
 #### Precommit Hooks
+
 These commands are executed before a commit is made to ensure code quality and consistency. They check for issues in the staged files, attempt to fix them automatically (using the --fix flag), and display an error if the issues cannot be fixed. If any problems remain unresolved, the commit is prevented.
 
 - `precommit`: Runs lint-staged to check staged files.
@@ -95,6 +102,7 @@ These commands are executed before a commit is made to ensure code quality and c
 - `precommit:typecheck`: Type checks the code without emitting output.
 
 #### Continuous Integration
+
 These commands are executed by GitHub Actions on the `release` branch. Each time a change is pushed to the `release` branch, these actions are triggered. If any action fails, the release process is halted until the issues are resolved.
 
 - `ci:lint`: Runs ESLint with a CI-specific configuration.
