@@ -111,3 +111,7 @@ These commands are executed by GitHub Actions on the `release` branch. Each time
 - `ci:format`: Checks code formatting using Prettier.
 
 ---
+
+#### To-do
+
+- Document AI component
