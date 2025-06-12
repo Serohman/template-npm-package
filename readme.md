@@ -115,3 +115,4 @@ These commands are executed by GitHub Actions on the `release` branch. Each time
 #### To-do
 
 - Document AI component
+- Add a workflow to publish package on Github in addition to NPM
