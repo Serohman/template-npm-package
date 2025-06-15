@@ -111,3 +111,7 @@ These commands are executed by GitHub Actions on the `release` branch. Each time
 - `ci:format`: Checks code formatting using Prettier.
 
 ---
+
+#### To-do
+
+- Add an obvious way for agents to update Jest snapshots, e.g. a new NPM script or a rule
